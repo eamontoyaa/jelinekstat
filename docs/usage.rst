@@ -35,7 +35,8 @@ Two ways for executing the application software via script are presented below.
 Short script
 ^^^^^^^^^^^^
 
-The first way is by using the function ``jelinekStats`` from the ``jelinekstat.py`` module in a short script as follow ::
+The first way is by using the function ``tensorStat`` from the
+``jelinekstat.py`` module in a short script as follow ::
     
     from jelinekstat.jelinekstat import tensorStat
 

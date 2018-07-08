@@ -45,3 +45,10 @@ Copyright (c) 2018, Universidad Nacional de Colombia, Medellín. |br|
 Copyright (c) 2018, Exneyder A. Monotoya-Araque and Ludger O. Suarez-Burgoa. |br|
 License BSD-2 or higher.
 
+References
+==========
+Jelínek, V (1978). Statistical processing of anisotropy of magnetic
+susceptibility measured on group of specimens. Studia Geophysica et Geodaetica,
+22 (1), pp. 50-62.
+
+

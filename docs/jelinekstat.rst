@@ -1,7 +1,7 @@
 ``jelinekstat``
 ===============
 
-.. automodule:: jelinekstat.jelinekstat
+.. automodule:: jelinekstat
     :members:
     :undoc-members:
     :show-inheritance:
