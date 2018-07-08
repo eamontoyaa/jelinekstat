@@ -11,7 +11,11 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [ ]
+requirements = [
+        'numpy >= 1.13.3',
+        'scipy >= 1.1.0',
+        'matplotlib >= 2.2.2',
+        'mplstereonet == 0.5']
 
 setup_requirements = ['pytest-runner', ]
 

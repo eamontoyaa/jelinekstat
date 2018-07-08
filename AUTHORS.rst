@@ -5,9 +5,9 @@ Credits
 Development Lead
 ----------------
 
-* Exneyder Montoya <eamontoyaa@gmail.com>
+* Exneyder A. Montoya-Araque <eamontoyaa@gmail.com>
 
 Contributors
 ------------
 
-None yet. Why not be the first?
+* Ludger O. Suarez-Burgoa <losuarezb@unal.edu.co>
