@@ -1,7 +1,8 @@
 '''
 Module which contains the functions that are supportive tools for the functions
 contained in the ``jelinekstat.py`` module which is the guideline of the
-second-order tensors statistical proposal of :cite:`Jelinek1978.article`.
+second-order tensors statistical proposal of
+`Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_.
 
 Note:
     * The packages `numpy <http://www.numpy.org/>`_,\

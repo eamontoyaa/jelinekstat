@@ -1,7 +1,8 @@
 '''
 Module which contains the required functions to apply the statistical model for
-a sample of :math:`n` second-order tensors :cite:`Jelinek1978.article` in
-order to obtain the mean tensor :math:`\\boldsymbol{k}` of the sample, the
+a sample of :math:`n` second-order tensors
+`Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_ in order to obtain the
+mean tensor :math:`\\boldsymbol{k}` of the sample, the
 :math:`\\boldsymbol{k}`'s principal values :math:`k_1, k_2\ \\&\ k_3`, with
 their confidence intervals, and the :math:`\\boldsymbol{k}`'s principal
 directions :math:`\\boldsymbol{p}_1, \\boldsymbol{p}_2\ \&\ \\boldsymbol{p}_3`
