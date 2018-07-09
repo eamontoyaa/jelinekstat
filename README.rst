@@ -12,12 +12,9 @@
 
 
 Application software in **Python 3** to apply the statistical proposal of
-`Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_ for a sample of :math:`n`
-second-order tensors in order to obtain the mean tensor :math:`\mathbf{k}`
-of the sample, the :math:`\mathbf{k}` 's principal values
-:math:`k_1, k_2\ \& \ k_3`, with their
-confidence intervals, and the :math:`\mathbf{k}`'s principal directions
-:math:`\mathbf{p}_1, \mathbf{p}_2\ \& \ \mathbf{p}_3`
+`Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_ for a sample of several
+second-order tensors in order to obtain the mean tensor of the sample, its
+principal values with their confidence intervals, and the principal directions
 with their confidence regions.
 
 This application program is able to plot the summary of the statistical model
@@ -31,8 +28,8 @@ Features
 --------
 
 * Free software: `BSD-2-Clause <https://opensource.org/licenses/BSD-2-Clause>`_
-* Open source
-* Documentation: https://jelinekstat.readthedocs.io.
+* `Open source <https://github.com/eamontoyaa/jelinekstat>`_
+* `Documentation <https://jelinekstat.readthedocs.io>`_
 
 
 Requirements

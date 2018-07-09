@@ -155,7 +155,7 @@ latex_elements = {
 latex_documents = [
     (master_doc, 'jelinekstat.tex',
      u'jelinekstat Documentation',
-     u'Exneyder Montoya', 'manual'),
+     u'Exneyder A. Montoya-Araque & Ludger O. Suarez-Burgoa', 'manual'),
 ]
 
 
