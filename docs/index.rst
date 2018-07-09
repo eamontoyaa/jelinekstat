@@ -28,6 +28,7 @@ outcomes.
    usage
    authors
    license
+   history
    references
 
 Indices and tables
