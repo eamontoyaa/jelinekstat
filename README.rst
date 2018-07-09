@@ -27,9 +27,10 @@ outcomes. Provided that, the next picture represents the aim of ``jelinekstat``.
 Features
 --------
 
-* Free software: `BSD-2-Clause <https://opensource.org/licenses/BSD-2-Clause>`_
-* `Open source <https://github.com/eamontoyaa/jelinekstat>`_
 * `Documentation <https://jelinekstat.readthedocs.io>`_
+* `PyPI <https://pypi.org/project/jelinekstat>`_
+* `GitHub <https://github.com/eamontoyaa/jelinekstat>`_
+* Open source and free software: `BSD-2-Clause <https://opensource.org/licenses/BSD-2-Clause>`_.
 
 
 Requirements
