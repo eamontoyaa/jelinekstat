@@ -85,8 +85,7 @@ To produce the plot shown above execute the following script
 
     # Performing the calculation all in one function.
     jelinekStatsSummary, stereonetPlot = tensorStat(
-            sample, confLevel=0.95, want2plot=True, plotName='testForSCRshort',
-            ext='pdf')
+            sample, confLevel=0.95, want2plot=True, plotName='tes', ext='pdf')
     stereonetPlot.show()
 
 
