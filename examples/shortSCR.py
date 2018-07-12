@@ -18,3 +18,5 @@ jelinekStatsSummary, stereonetPlot = tensorStat(
         sample, confLevel=0.95, want2plot=True, plotName='shortSCRoutcome',
         ext='pdf')
 stereonetPlot.show()
+
+plt.plot([1,2,3,4,5,5,4,1,3,5,5,6,6])
