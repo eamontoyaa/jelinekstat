@@ -19,6 +19,7 @@ This application program is able to plot the summary of the statistical model
 described above in a stereographic projection for a better understanding of the
 outcomes.
 
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -30,6 +31,15 @@ outcomes.
    license
    history
    references
+
+
+Links
+=====
+
+* `Documentation <https://jelinekstat.readthedocs.io>`_
+* `PyPI <https://pypi.org/project/jelinekstat>`_
+* `GitHub <https://github.com/eamontoyaa/jelinekstat>`_
+
 
 Indices and tables
 ==================
