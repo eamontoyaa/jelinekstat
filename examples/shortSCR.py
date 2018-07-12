@@ -4,6 +4,9 @@ import matplotlib.pyplot as plt
 
 # Input data
 plt.ion()
+
+plt.plot([1,2,3,4,5,5,4,1,3,5,5,6,6])
+plt.show()
 sample = [[1.02327, 1.02946, 0.94727, -0.01495, -0.03599, -0.05574],
           [1.02315, 1.01803, 0.95882, -0.00924, -0.02058, -0.03151],
           [1.02801, 1.03572, 0.93627, -0.03029, -0.03491, -0.06088],
@@ -19,4 +22,3 @@ jelinekStatsSummary, stereonetPlot = tensorStat(
         ext='pdf')
 stereonetPlot.show()
 
-plt.plot([1,2,3,4,5,5,4,1,3,5,5,6,6])
