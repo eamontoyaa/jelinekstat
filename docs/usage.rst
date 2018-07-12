@@ -57,7 +57,7 @@ The first way is by using the function ``tensorStat`` from the
             ext='pdf')
     stereonetPlot.show()
 
-.. plot:: examples/shortSCR.py
+.. plot:: ../examples/shortSCR.py
    :include-source:
 
 Long script

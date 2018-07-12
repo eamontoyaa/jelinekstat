@@ -17,9 +17,6 @@ Note:
         Suarez-Burgoa.\
         `BSD-2-Clause <https://opensource.org/licenses/BSD-2-Clause>`_ or\
         higher.
-
-References:
-    .. bibliography:: references.bib
 '''
 
 
