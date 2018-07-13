@@ -16,3 +16,4 @@ jelinekStatsSummary, stereonetPlot = tensorStat(
         sample, confLevel=0.95, want2plot=True, plotName='shortSCRoutcome',
         ext='pdf')
 stereonetPlot.show()
+

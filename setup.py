@@ -38,7 +38,7 @@ setup(
     include_package_data=True,
     keywords=['Anisotropy of Magnetic Susceptibility', 'Jelínek', 'tensor', 'statistics', 'Python', 'application software'],
     name='jelinekstat',
-    packages=['jelinekstat'],
+    packages=find_packages(include=['jelinekstat']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,

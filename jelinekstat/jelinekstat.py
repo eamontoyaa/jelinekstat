@@ -492,31 +492,38 @@ def tensorStat(sample, confLevel=0.95, want2plot=True, plotName='001',
         {'K': array([[ 1.02533293, -0.01714126, -0.03794001],
                      [-0.01714126,  1.01891542, -0.03435001],
                      [-0.03794001, -0.03435001,  0.95575165]]),
-         'k': array([1.02533, 1.01892, 0.95575, -0.01714, -0.03435, -0.03794]),
-         'k1': {'mean': 1.0424, 'variability': 0.0084},
-         'k2': {'mean': 1.0330, 'variability': 0.0062},
-         'k3': {'mean': 0.9236, 'variability': 0.0133},
+         'k': array([1.02533, 1.01891, 0.95575, -0.01714, -0.03435, -0.03794]),
          'n': 8,
-         'p1': {'coords': array([-0.92438729, 0.196842, 0.32674357]),
-                'incl': -1.1160, 'majAx': 0.6689, 'minAx': 0.0995,
-                'plg': 19.0712, 'trd': 167.9788},
+         'k1': {'value': 1.042393712466853, 'variability': 0.008446101031382},
+         'k2': {'value': 1.033975634080194, 'variability': 0.006232053391831},
+         'k3': {'value': 0.92363065345295237, 'variability': 0.0132878448184},
+         'p1': {'coords': array([-0.92438729,  0.196842  ,  0.32674357]),
+          'plg': 19.071242330117354,
+          'trd': 167.97880567817268,
+          'majAx': 0.66888885495049721,
+          'minAx': 0.099505476893979108,
+          'incl': -1.1169443953398852},
          'p2': {'coords': array([-0.04467227, -0.90653975,  0.41975002]),
-                'incl': -86.9142, 'majAx': 0.6695, 'minAx': 0.0962,
-                'plg': 24.8188, 'trd': 267.1789},
+          'plg': 24.818806179014864,
+          'trd': 267.17887306022931,
+          'majAx': 0.66949335258868026,
+          'minAx': 0.096154338416730253,
+          'incl': -86.914236097035555},
          'p3': {'coords': array([-0.37883047, -0.37341521, -0.8467872 ]),
-                'incl': -46.5029, 'majAx': 0.1375, 'minAx': 0.0464,
-                'plg': 57.8639, 'trd': 44.5875}}
+          'plg': 57.863927991299327,
+          'trd': 44.587546531270618,
+          'majAx': 0.13745894751107776,
+          'minAx': 0.0464012210689351,
+          'incl': -46.502865813326189}}
         >>> stereonetPlot.show()
 
-         .. plot::
+        .. figure:: https://rawgit.com/eamontoyaa/jelinekstat/master/\
+            jelinekstat/examples/figures/jelinekstat_tensorStat_example.svg
+            :alt: Outcome plot example
 
-            from jelinekstat.tools import dataFromFile
-            from jelinekstat.jelinekstat import tensorStat
-            sample, numTensors = dataFromFile('exampledata.txt')
-            jelinekStatsSummary, stereonetPlot = tensorStat(
-                    sample, confLevel=0.95, want2plot=True, plotName='test',
-                    ext='pdf')
-            stereonetPlot.show()
+        .. only:: builder_html
+           :download:`example script<../examples/figuresScripts/\
+           jelinekstat_tensorStat_example.py>`.
     '''
 
     import numpy as np
