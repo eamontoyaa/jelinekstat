@@ -517,8 +517,8 @@ def tensorStat(sample, confLevel=0.95, want2plot=True, plotName='001',
           'incl': -46.502865813326189}}
         >>> stereonetPlot.show()
 
-        .. figure:: https://rawgit.com/eamontoyaa/jelinekstat/master/\
-            jelinekstat/examples/figures/jelinekstat_tensorStat_example.svg
+        .. figure:: https://rawgit.com/eamontoyaa/jelinekstat/master/examples/\
+            figuresScripts/jelinekstat_tensorStat_example.py
             :alt: Outcome plot example
 
         .. only:: builder_html
