@@ -458,9 +458,9 @@ def eigVectsRegions(W, eigVal_W, eigVec_W, numTensors, confLvl=0.95,
 
 
 def tensorStat(sample, confLevel=0.95, want2plot=True, plotName='001',
-                 ext='pdf'):
-    '''Summarizes the :cite:`Jelinek1978.article` statisctic proposal for
-    2nd-order tensors and plots it if is wanted.
+               ext='pdf'):
+    '''Summarizes the `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_
+    statisctic proposal for 2nd-order tensors and plots it if is wanted.
 
     Parameters:
         sample (`numpy.ndarray`): :math:`(n \times 6)` array that \
@@ -476,7 +476,8 @@ def tensorStat(sample, confLevel=0.95, want2plot=True, plotName='001',
             default value.
 
     Returns:
-        (`dict`): Summary of the :cite:`Jelinek1978.article` statisctic\
+        (`dict`): Summary of the\
+            `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_ statisctic\
             proposal for 2nd-order tensors where is stored the data related to\
             the mean tensor and its variability expressed as the variability\
             of their principal values and vectors.
@@ -486,7 +487,7 @@ def tensorStat(sample, confLevel=0.95, want2plot=True, plotName='001',
         >>> from jelinekstat.jelinekstat import tensorStat
         >>> sample, numTensors = dataFromFile('inputDataExample.txt')
         >>> jelinekStatsSummary, stereonetPlot = tensorStat(
-        >>>     sample, confLevel=0.95, want2plot=True, plotName='test',
+        >>>     sample, confLevel=0.95, want2plot=True, plotName='example',
         >>>     ext='pdf')
         >>> jelinekStatsSummary
         {'K': array([[ 1.02533293, -0.01714126, -0.03794001],
@@ -518,11 +519,11 @@ def tensorStat(sample, confLevel=0.95, want2plot=True, plotName='001',
         >>> stereonetPlot.show()
 
     .. figure:: https://rawgit.com/eamontoyaa/jelinekstat/master/examples/figuresScripts/jelinekstat_tensorStat_example.py
-        :alt: Outcome plot example
+        :alt: jelinekstat_tensorStat_example
 
     .. only:: builder_html
-       :download:`example script<../examples/figuresScripts/\
-       jelinekstat_tensorStat_example.py>`.
+
+       :download:`example script<../examples/figuresScripts/jelinekstat_tensorStat_example.py>`.
     '''
 
     import numpy as np
