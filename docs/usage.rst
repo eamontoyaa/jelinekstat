@@ -52,7 +52,7 @@ The first way is by using the function ``tensorStat`` from the ``jelinekstat.py`
 Long script
 ^^^^^^^^^^^
 
-The second way is by using all the code lines inside the same function used above in a much longer script as follow ::
+The second way is by using all the code lines inside the same function used above in a much longer script as follow.
 
 
 .. literalinclude:: ../examples/longSCR.py

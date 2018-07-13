@@ -20,9 +20,10 @@ Note:
         required for using the ``jelinekstat.py`` module. All of them are\
         downloadable from the PyPI repository.
     * The mathematical notation in this documentation is taken from the\
-        original reference :cite:`Jelinek1978.article`.
-    * Copyright (c) 2018, Universidad Nacional de Colombia, Medellín. \
-        Copyright (c) 2018, Exneyder A. Monotoya-Araque and Ludger O. \
+        original reference\
+        `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_.
+    * Copyright (c) 2018, Universidad Nacional de Colombia, Medellín.\
+        Copyright (c) 2018, Exneyder A. Monotoya-Araque and Ludger O.\
         Suarez-Burgoa.\
         `BSD-2-Clause <https://opensource.org/licenses/BSD-2-Clause>`_ or\
         higher.
@@ -31,11 +32,11 @@ Note:
 
 def normalizeTensors(sample):
     '''Divides all the tensor's elements by the mean susceptibility
-    :math:`{k}`, *i.e.* gets :math:`\\boldsymbol{k}_\\mathrm{norm}` by using
-    the equations (8) of :cite:`Jelinek1978.article`.
+    :math:`{k}`, *i.e.* gets :math:`\\boldsymbol{k}_\\mathrm{norm}` using the
+    equations (8) of `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_.
 
     Parameters:
-        sample (`numpy.ndarray`): :math:`(n \\times 6)` array that \
+        sample (`numpy.ndarray`): :math:`(n \\times 6)` array that
             contains the values obtained from the ``extractdata`` fuction.
 
     Returns:
@@ -79,17 +80,19 @@ def normalizeTensors(sample):
 def meantensor(sample, normalized=False):
     '''Estimates the mean tensor :math:`\\boldsymbol{k}` of a randomly chosen
     sample of :math:`n` specimens by using the equation (11) of
-    :cite:`Jelinek1978.article` after being normalized the specimens through
-    the ``normalizeTensors`` function.
+    `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_ after being
+    normalized the specimens through the ``normalizeTensors`` function.
 
     Parameters:
-        sample (`numpy.ndarray`): :math:`(n \\times 6)` array that \
-            contains the values of the tensors after being imported with the\
+        sample (`numpy.ndarray`): :math:`(n \\times 6)` array that
+            contains the values of the tensors after being imported with the
             ``extractdata`` function.
-        normalize (`bool`): Logical variable to indicate if the tensors in\
-            the ``sample`` variable are already normalized by using the\
-            equation (11) of (:cite:`Jelinek1978.article`). ``False`` is the\
-            default value. In the case they are not normalized, they will be.
+        normalize (`bool`): Logical variable to indicate if the tensors in
+            the ``sample`` variable are already normalized by using the
+            equation (11) of
+            (`Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_). ``False``
+            is the default value. In the case they are not normalized,
+            they will be.
 
     Returns:
         Three elements are returned; they are described below.
@@ -136,22 +139,23 @@ def meantensor(sample, normalized=False):
     return meanTensorVect, meanTensorMtx, numTensors
 
 
-def covMtx2PPlane(
-        covMtx, meanTensor, numTensors, tensorVectForm=True):
+def covMtx2PPlane(covMtx, meanTensor, numTensors, tensorVectForm=True):
     '''Obtains the covariance matrix
     :math:`\\boldsymbol{\\mathrm{V^\\mathrm{P}}}` of the
     :math:`\\boldsymbol{k^\\mathrm{P}}`'s elements (*i.e.* going over to a
     Cartesian system determined by
     :math:`\\boldsymbol{p}_1, \\boldsymbol{p}_2\ \&\ \\boldsymbol{p}_3` as is
-    shown equation (19) of :cite:`Jelinek1978.article`), by using the equation
-    (20) and (21) of :cite:`Jelinek1978.article`.
+    shown equation (19) of
+    `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_), by using the
+    equation (20) and (21) of the same reference.
 
     Parameters:
         covMtx (`numpy.ndarray`): :math:`(6 \\times 6)` array that estimates\
             the unbiased covariance matrix :math:`\\boldsymbol{\\mathrm{V}}`\
             of the tensors in the sample. It can be obtained by using the\
-            equation (13) of :cite:`Jelinek1978.article`) or the ``cov``\
-            numpy function (as is shown in the example).
+            equation (13) of
+            `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_) or the
+            ``cov`` numpy function (as is shown in the example).
         meanTensor (`numpy.ndarray`): mean tensor :math:`\\boldsymbol{k}` of\
             he sample either in vector or matrix form.
         numTensors (`int`): Number of tensors in the sample.
@@ -227,17 +231,18 @@ def localCovMtxs(meanTensor, pCovMtx, tensorVectForm=True):
     \\mathrm{d}p_{ki}\\right)` from the local Cartesian System
     :math:`\\mathrm{d}\\boldsymbol{p}_i` that define the :math:`\\mathscr{P}-`
     plane where each confidence area of the mean tensor's princial direcions
-    are drawn by using the equation (27) of :cite:`Jelinek1978.article`.
+    are drawn by using the equation (27) of
+    `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_.
 
     Parameters:
-        meanTensor (`numpy.ndarray`): mean tensor :math:`\\boldsymbol{k}` of\
+        meanTensor (`numpy.ndarray`): mean tensor :math:`\\boldsymbol{k}` of
             the sample either in vector or matrix form.
-        pCovMtx (`numpy.ndarray`): :math:`(6 \\times 6)` covariance matrix \
-            :math:`\\boldsymbol{\\mathrm{V^\\mathrm{P}}}` of \
-            :math:`\\boldsymbol{k^\\mathrm{P}}`'s elements. It is obtained\
+        pCovMtx (`numpy.ndarray`): :math:`(6 \\times 6)` covariance matrix
+            :math:`\\boldsymbol{\\mathrm{V^\\mathrm{P}}}` of
+            :math:`\\boldsymbol{k^\\mathrm{P}}`'s elements. It is obtained
             with the ``covMtx2PPlane`` function.
-        tensorVectForm (`bool`): Logical variable to indicate if the input \
-            :math:`\\boldsymbol{k}` is in vector form. ``True`` is the default\
+        tensorVectForm (`bool`): Logical variable to indicate if the input
+            :math:`\\boldsymbol{k}` is in vector form. ``True`` is the default
             value.
 
     Returns:
@@ -311,21 +316,22 @@ def localCovMtxs(meanTensor, pCovMtx, tensorVectForm=True):
 def eigValsIntervals(pCovMtx, numTensors, confLvl=0.95, estimate=True):
     '''Determines the limits of the variabilities of :math:`\\boldsymbol{k}`'s
     principal values for a confidence level given. Ther are obtained by using
-    the equation (29) of :cite:`Jelinek1978.article` or their estimate values
-    by using the equation (35) of :cite:`Jelinek1978.article`.
+    the equation (29) of `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_
+    or their estimate values by using the equation (35) of
+    `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_.
 
     Parameters:
-        pCovMtx (`numpy.ndarray`): :math:`(6 \\times 6)` covariance matrix \
-            :math:`\\boldsymbol{\\mathrm{V^\\mathrm{P}}}` of \
-            :math:`\\boldsymbol{k^\\mathrm{P}}`'s elements. It is obtained\
+        pCovMtx (`numpy.ndarray`): :math:`(6 \\times 6)` covariance matrix
+            :math:`\\boldsymbol{\\mathrm{V^\\mathrm{P}}}` of
+            :math:`\\boldsymbol{k^\\mathrm{P}}`'s elements. It is obtained
             with the ``covMtx2PPlane`` function.
         numTensors (`int`): Number of tensors in the sample.
         confLvl (`float`): Confidence level of the limits of the
-            variabilities of :math:`\\boldsymbol{k}`'s principal values. \
+            variabilities of :math:`\\boldsymbol{k}`'s principal values.
             ``0.95``  is the default value.
-        estimate (`bool`): Logical variable to indicate if the output is based\
-            whether on the real or estimate covariance matrix \
-            :math:`\\boldsymbol{\\mathrm{V^\\mathrm{P}}}`. ``True`` is the\
+        estimate (`bool`): Logical variable to indicate if the output is based
+            whether on the real or estimate covariance matrix
+            :math:`\\boldsymbol{\\mathrm{V^\\mathrm{P}}}`. ``True`` is the
             default value.
 
     Returns:
@@ -368,30 +374,31 @@ def eigVectsRegions(W, eigVal_W, eigVec_W, numTensors, confLvl=0.95,
     :math:`\\boldsymbol{k}`'s principal vectors.
 
     The axes lenghts ara obtained by using the equation (32) of
-    :cite:`Jelinek1978.article` or their estimated values by
-    using the equation (35) of :cite:`Jelinek1978.article` and the inclination
-    angles by using the equation (41) of :cite:`Jelinek1978.article`.
+    `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_ or their estimated
+    values by using the equation (35) of
+    `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_ and the inclination
+    angles by using the equation (41) of the same reference.
 
     Parameters:
-        W (`list`): list of three :math:`(2 \\times 2)` arrayes with the\
-            covariance matrix :math:`\\boldsymbol{\\mathrm{W}_i}` described\
-            above. It is obtained from the ``eigValsIntervals``\
+        W (`list`): list of three :math:`(2 \\times 2)` arrayes with the
+            covariance matrix :math:`\\boldsymbol{\\mathrm{W}_i}` described
+            above. It is obtained from the ``eigValsIntervals``
             function.
-        eigVal_W (`list`): list with the three couples of \
-            :math:`\\boldsymbol{\\mathrm{W}_i}`'s eigenvalues obtained with \
-            the ``getEigSorted`` function. It is obtained from the \
+        eigVal_W (`list`): list with the three couples of
+            :math:`\\boldsymbol{\\mathrm{W}_i}`'s eigenvalues obtained with
+            the ``getEigSorted`` function. It is obtained from the
             ``eigValsIntervals`` function.
-        eigVec_W (`list`): list with the three :math:`(2 \\times 2)` arrayes \
-            of :math:`\\boldsymbol{\\mathrm{W}_i}`'s eigevectors obtained with\
-            the ``getEigSorted`` function. It is obtained from the \
+        eigVec_W (`list`): list with the three :math:`(2 \\times 2)` arrayes
+            of :math:`\\boldsymbol{\\mathrm{W}_i}`'s eigevectors obtained with
+            the ``getEigSorted`` function. It is obtained from the
             ``eigValsIntervals`` function.
         numTensors (`int`): Number of tensors in the sample.
         confLvl (`float`): Confidence level of the limits of the
-            variabilities of :math:`\\boldsymbol{k}`'s principal vectors. \
+            variabilities of :math:`\\boldsymbol{k}`'s principal vectors.
             ``0.95`` is the default value.
-        estimate (`bool`): Logical variable to indicate if the output is based\
-            whether on the real or estimate covariance matrix \
-            :math:`\\boldsymbol{\\mathrm{V^\\mathrm{P}}}`. ``True`` is the\
+        estimate (`bool`): Logical variable to indicate if the output is based
+            whether on the real or estimate covariance matrix
+            :math:`\\boldsymbol{\\mathrm{V^\\mathrm{P}}}`. ``True`` is the
             default value.
 
     Returns:
@@ -463,16 +470,16 @@ def tensorStat(sample, confLevel=0.95, want2plot=True, plotName='001',
     statisctic proposal for 2nd-order tensors and plots it if is wanted.
 
     Parameters:
-        sample (`numpy.ndarray`): :math:`(n \times 6)` array that \
+        sample (`numpy.ndarray`): :math:`(n \times 6)` array that
             contains the values obtained from the ``extractdata`` fuction.
         confLvl (`float`): Confidence level of the limits of the
-            variabilities of :math:`\boldsymbol{k}`'s principal vectors and \
+            variabilities of :math:`\boldsymbol{k}`'s principal vectors and
             values. ``0.95`` is the default value.
-        want2plot (`bool`): Logical variable to indicate if is wanted to plot\
+        want2plot (`bool`): Logical variable to indicate if is wanted to plot
             the summary. ``True`` is the default value.
-        plotName (`str`): Sample name for saving the final plot. '01' is the\
+        plotName (`str`): Sample name for saving the final plot. '01' is the
             default value.
-        ext (`str`): File extension for saving the final plot. 'pdf' is the\
+        ext (`str`): File extension for saving the final plot. 'pdf' is the
             default value.
 
     Returns:

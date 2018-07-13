@@ -11,7 +11,8 @@ Note:
         required for using the ``jelinekstat.py`` module. All of them are\
         downloadable from the PyPI repository.
     * The mathematical notation in this documentation is taken from the\
-        original reference :cite:`Jelinek1978.article`.
+        original reference\
+        `Jelínek (1978) <https://doi.org/10.1007/BF01613632>`_.
     * Copyright (c) 2018, Universidad Nacional de Colombia, Medellín. \
         Copyright (c) 2018, Exneyder A. Monotoya-Araque and Ludger O. \
         Suarez-Burgoa.\
@@ -24,10 +25,10 @@ def dataFromFile(file):
     '''Loads the ``.txt`` file with all second-order tensors components.
 
     Parameters:
-        file (`str`): ``txt`` file tabulated with tabular spaces as delimiter.\
-            The file is structured as a :math:`(n \\times 6)` array, where \
-            :math:`n` is the number of tensors and each row contains the\
-            vector form with the 6 components of a tensor in the following\
+        file (`str`): ``txt`` file tabulated with tabular spaces as delimiter.
+            The file is structured as a :math:`(n \\times 6)` array, where
+            :math:`n` is the number of tensors and each row contains the
+            vector form with the 6 components of a tensor in the following
             order :math:`t_{11}, t_{22}, t_{33}, t_{12}, t_{23}, t_{13}`.
 
     Returns:
@@ -67,8 +68,8 @@ def tensorvect2matrixform(tensorVect):
     form.
 
     Parameters:
-        tensorVect (`list` or `numpy.ndarray`): :math:`(n \\times 6)` tensor\
-            components written as column vector with the following order\
+        tensorVect (`list` or `numpy.ndarray`): :math:`(n \\times 6)` tensor
+            components written as column vector with the following order
             :math:`t_{11}, t_{22}, t_{33}, t_{12}, t_{23}, t_{13}`.
 
     Returns:
@@ -101,7 +102,7 @@ def vector2plungetrend(vector):
     **NED** notation (*i.e* North, East, Nadir).
 
     Parameters:
-        vector (`list` or `numpy.ndarray`): :math:`\\left(x, y, z \\right)`\
+        vector (`list` or `numpy.ndarray`): :math:`\\left(x, y, z \\right)`
             vector.
 
     Returns:
@@ -183,21 +184,21 @@ def confRegions2PPlanes(majorAxis, minorAxis, theta, want2plot=True,
     plots them too.
 
     Parameters:
-        majorAxis (`numpy.ndarray`): Array with the three lengths of the \
-            ellipses' major axis that define the confidence region. The order \
-            is acording to the principal values returned from the \
+        majorAxis (`numpy.ndarray`): Array with the three lengths of the
+            ellipses' major axis that define the confidence region. The order
+            is acording to the principal values returned from the
             ``getEigSorted`` function.
-        minorAxis (`list`): list with the three couples of \
-            :math:`\\boldsymbol{\\mathrm{W}_i}`'s eigenvalues obtained with\
-            the ``getEigSorted`` function. The order is acording to the\
+        minorAxis (`list`): list with the three couples of
+            :math:`\\boldsymbol{\\mathrm{W}_i}`'s eigenvalues obtained with
+            the ``getEigSorted`` function. The order is acording to the
             principal values returned from the ``getEigSorted`` function.
-        theta (`list`): list with the three ellipse inclinations in radians \
-            measured from the horizontal axis of the local Cartesian System of\
+        theta (`list`): list with the three ellipse inclinations in radians
+            measured from the horizontal axis of the local Cartesian System of
             each ellipse to the respective major axis counter clockwise.
-        want2plot (`bool`): Logical variable to indicate if is wanted to plot\
+        want2plot (`bool`): Logical variable to indicate if is wanted to plot
             the ellipes. ``True`` is the default value.
         confLvl (`float`): Confidence level of the limits of the
-            variabilities of :math:`\\boldsymbol{k}`'s principal vectors and \
+            variabilities of :math:`\\boldsymbol{k}`'s principal vectors and
             values. ``0.95`` is the default value.
 
     Returns:
@@ -220,28 +221,13 @@ def confRegions2PPlanes(majorAxis, minorAxis, theta, want2plot=True,
         >>>                                 want2plot=True, confLvl=0.95)
         >>> fig.show()
 
-        .. plot::
+    .. figure:: https://rawgit.com/eamontoyaa/jelinekstat/master/examples/figures/tools_confRegions2PPlanes_example.svg
+        :alt: tools_confRegions2PPlanes_example
 
-            # Full example
-            from numpy import cov
-            from jelinekstat.tools import dataFromFile, confRegions2PPlanes
-            from jelinekstat.jelinekstat import normalizeTensors,\
-                meantensor, covMtx2PPlane, localCovMtxs, eigVectsRegions
-            sample, numTensors = dataFromFile('exampledata.txt')
-            normTensors = normalizeTensors(sample)
-            meanTensorVect, meanTensorMtx, numTensors = meantensor(
-                normTensors, normalized=True)
-            covMtx = cov(normTensors.T, bias=False)
-            pCovMtx = covMtx2PPlane(
-                covMtx, meanTensorVect, numTensors)
-            W, eigVal_W, eigVec_W = localCovMtxs(
-                meanTensorVect, pCovMtx)
-            majorAxis, minorAxis, theta = eigVectsRegions(
-                W, eigVal_W, eigVec_W, numTensors, confLvl=0.95,
-                estimate=True)
-            x, y, fig = confRegions2PPlanes(majorAxis, minorAxis, theta,
-                                            want2plot=True, confLvl=0.95)
-            fig.show()
+    .. only:: html
+
+       :download:`example script<../examples/figuresScripts/tools_confRegions2PPlanes_example.py>`.
+
     '''
     import numpy as np
     import matplotlib.pyplot as plt
@@ -299,15 +285,15 @@ def rotateaxis2proyectellipses(axisN, axisE, axisD):
     due to they correspond to the principal vectors of :math:`\\boldsymbol{k}`.
 
     Parameters:
-        axisN (`numpy.ndarray`): Array with the coordinates :math:`x, y, z`\
+        axisN (`numpy.ndarray`): Array with the coordinates :math:`x, y, z`
             of the eigenvector that will point to the north-axis once the
             ellipse is placed at nadir of the semi-sphere, *i.e.*, its
             othogonal eigenvector associated points downward.
-        axisE (`numpy.ndarray`): Array with the coordinates :math:`x, y, z`\
+        axisE (`numpy.ndarray`): Array with the coordinates :math:`x, y, z`
             of the eigenvector that will point to the east-axis once the
             ellipse is placed at nadir of the semi-sphere, *i.e.*, its
             othogonal eigenvector associated points downward.
-        axisD (`numpy.ndarray`): Array with the coordinates :math:`x, y, z`\
+        axisD (`numpy.ndarray`): Array with the coordinates :math:`x, y, z`
             of the eigenvector that is othogonal to the ellipse.
 
     Returns:
@@ -385,18 +371,18 @@ def proyAnEllipse2LongLat(x, y, axis2rot, angles2rot):
     position at the nadir of the semi-sphere.
 
     Parameters:
-        x (`numpy.ndarray` or `list`): Abscises of just one ellipse's boundary\
-            on the :math:`\\mathscr{P}-` plane. It is obtained from the \
+        x (`numpy.ndarray` or `list`): Abscises of just one ellipse's boundary
+            on the :math:`\\mathscr{P}-` plane. It is obtained from the
             ``confRegions2PPlanes`` function.
-        y (`numpy.ndarray` or `list`): Ordinates of just one ellipse's\
-            boundary on the :math:`\\mathscr{P}-` plane. It is obtained from\
+        y (`numpy.ndarray` or `list`): Ordinates of just one ellipse's
+            boundary on the :math:`\\mathscr{P}-` plane. It is obtained from
             the ``confRegions2PPlanes`` function.
-        axis2rot (`list`): Strings with the axis-names of the **NED** system\
-            around which will be done the rotatios to project the confidence\
-            ellipse. It is obtained from the ``rotateaxis2proyectellipses`` \
+        axis2rot (`list`): Strings with the axis-names of the **NED** system
+            around which will be done the rotatios to project the confidence
+            ellipse. It is obtained from the ``rotateaxis2proyectellipses``
             function.
-        angles2rot (`list`): List of the angles in degrees for rotating a\
-            ellipse once it is placed orthogonal to the nadir. It is obtained\
+        angles2rot (`list`): List of the angles in degrees for rotating a
+            ellipse once it is placed orthogonal to the nadir. It is obtained
             from the ``rotateaxis2proyectellipses`` function.
 
     Returns:
@@ -454,7 +440,7 @@ def eigVects2PlgTrd(tensor, tensorVectForm=True):
 
     Parameters:
         tensor (`numpy.ndarray`): A secon-order tensor.
-        tensorVectForm (`bool`): Logical variable to indicate if the input \
+        tensorVectForm (`bool`): Logical variable to indicate if the input
             tensor is in vector form. ``True`` is the default value.
 
     Returns:
@@ -497,18 +483,18 @@ def proyAllEllipses2LongLat(x, y, meanTensor, tensorVectForm=True):
     an initial position at the nadir of the semi-sphere.
 
     Parameters:
-        x (`numpy.ndarray` or `list`): Arrangement of the three lists each one\
-            with the abscises of an ellipse's boundary on the \
-            :math:`mathscr{P}-` plane. They are obtained from the \
+        x (`numpy.ndarray` or `list`): Arrangement of the three lists each one
+            with the abscises of an ellipse's boundary on the
+            :math:`mathscr{P}-` plane. They are obtained from the
             ``confRegions2PPlanes`` function.
-        y (`numpy.ndarray` or `list`): Arrangement of the three lists each one\
-            with the ordinates of an ellipse's boundary on the \
-            :math:`mathscr{P}-` plane. They are obtained from the \
+        y (`numpy.ndarray` or `list`): Arrangement of the three lists each one
+            with the ordinates of an ellipse's boundary on the
+            :math:`mathscr{P}-` plane. They are obtained from the
             ``confRegions2PPlanes`` function.
-        meanTensor (`numpy.ndarray`): mean tensor :math:`\\boldsymbol{k}` of\
+        meanTensor (`numpy.ndarray`): mean tensor :math:`\\boldsymbol{k}` of
             the sample either in vector or matrix form.
-        tensorVectForm (`bool`): Logical variable to indicate if the input \
-            :math:`\\boldsymbol{k}` is in vector form. ``True`` is the default\
+        tensorVectForm (`bool`): Logical variable to indicate if the input
+            :math:`\\boldsymbol{k}` is in vector form. ``True`` is the default
             value.
 
     Returns:
@@ -562,9 +548,9 @@ def splitIterables(iter1, iter2):
     within a list.
 
     Parameters:
-        iter1 (`numpy.ndarray` or `list`): An iterable element which is\
+        iter1 (`numpy.ndarray` or `list`): An iterable element which is
             paired to ``iter2``.
-        iter2 (`numpy.ndarray` or `list`): An iterable element which is\
+        iter2 (`numpy.ndarray` or `list`): An iterable element which is
             paired to ``iter1``.
 
     Returns:
