@@ -518,12 +518,13 @@ def tensorStat(sample, confLevel=0.95, want2plot=True, plotName='001',
           'incl': -46.502865813326189}}
         >>> stereonetPlot.show()
 
-    .. figure:: https://rawgit.com/eamontoyaa/jelinekstat/master/examples/figuresScripts/jelinekstat_tensorStat_example.py
+    .. figure:: https://rawgit.com/eamontoyaa/jelinekstat/master/examples/figures/jelinekstat_tensorStat_example.svg
         :alt: jelinekstat_tensorStat_example
 
     .. only:: html
 
-       :download:`example script<../examples/figuresScripts/jelinekstat_tensorStat_example.py>`.
+       :download:`example script<../examples/figuresScripts/\
+       jelinekstat_tensorStat_example.py>`.
     '''
 
     import numpy as np
