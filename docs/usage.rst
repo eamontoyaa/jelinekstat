@@ -60,7 +60,7 @@ The second way is by using all the code lines inside the same function used abov
 
 .. only:: html
 
-   :download:`example script<../examples/shortSCR.py>`.
+   :download:`example script<../examples/longSCR.py>`.
 
 
 Since it is the same picture than the obtained with the **short script**, it is not displayed again.
