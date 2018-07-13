@@ -522,9 +522,7 @@ def tensorStat(sample, confLevel=0.95, want2plot=True, plotName='001',
         :alt: jelinekstat_tensorStat_example
 
     .. only:: html
-
-       :download:`example script<../examples/figuresScripts/\
-       jelinekstat_tensorStat_example.py>`.
+       :download:`example script<../examples/figuresScripts/jelinekstat_tensorStat_example.py>`.
     '''
 
     import numpy as np
