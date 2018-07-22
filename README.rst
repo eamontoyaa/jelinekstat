@@ -11,15 +11,12 @@
         :alt: PyPI
 
 .. image:: https://img.shields.io/badge/License-BSD%202--Clause-brightgreen.svg
-        :target: https://github.com/aarizat/FiguresInRTD/blob/master/LICENSE
+        :target: https://github.com/eamontoyaa/jelinekstat/blob/master/LICENSE
         :alt: License
 
 .. image:: https://readthedocs.org/projects/jelinekstat/badge/?version=latest
         :target: https://jelinekstat.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
-
-.. |License| image:: https://img.shields.io/badge/License-BSD%202--Clause-brightgreen.svg
-   :target: https://github.com/eamontoyaa/jelinekstat/blob/master/LICENSE
 
 
 Application software in **Python 3** to apply the statistical proposal of
