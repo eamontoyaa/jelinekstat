@@ -2,13 +2,24 @@
 ``jelinekstat``
 ===============
 
+.. image:: https://img.shields.io/badge/Made%20with-Python-brightgreen.svg
+        :target: https://www.python.org/
+        :alt: made-with-python
 
 .. image:: https://img.shields.io/pypi/v/jelinekstat.svg
         :target: https://pypi.python.org/pypi/jelinekstat
+        :alt: PyPI
+
+.. image:: https://img.shields.io/badge/License-BSD%202--Clause-brightgreen.svg
+        :target: https://github.com/aarizat/FiguresInRTD/blob/master/LICENSE
+        :alt: License
 
 .. image:: https://readthedocs.org/projects/jelinekstat/badge/?version=latest
         :target: https://jelinekstat.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
+
+.. |License| image:: https://img.shields.io/badge/License-BSD%202--Clause-brightgreen.svg
+   :target: https://github.com/aarizat/FiguresInRTD/blob/master/LICENSE
 
 
 Application software in **Python 3** to apply the statistical proposal of
